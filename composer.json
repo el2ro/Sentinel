@@ -1,12 +1,12 @@
 {
-    "name": "rydurham/sentinel",
+    "name": "el2ro/sentinel",
     "description": "An implementation of the Sentry User Manager for Laravel.",
     "keywords": ["laravel", "sentry", "auth"],
     "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Ryan Durham",
-            "email": "rydurham@gmail.com",
+            "email": "el2ro@gmail.com",
             "homepage": "http://ryandurham.com"
         },
         {

@@ -21,28 +21,28 @@ class SentinelServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		// Load the package
-		$this->package('rydurham/sentinel');
+		$this->package('el2ro/sentinel');
 
         // Register the Sentry Service Provider
         $this->app->register('Cartalyst\Sentry\SentryServiceProvider');
 
-        // Add the Views Namespace 
-        if (is_dir(app_path().'/views/packages/rydurham/sentinel'))
+        // Add the Views Namespace
+        if (is_dir(app_path().'/views/packages/el2ro/sentinel'))
         {
-        	// The package views have been published - use those views. 
-        	$this->app['view']->addNamespace('Sentinel', array(app_path().'/views/packages/rydurham/sentinel'));
+        	// The package views have been published - use those views.
+        	$this->app['view']->addNamespace('Sentinel', array(app_path().'/views/packages/el2ro/sentinel'));
         }
-        else 
+        else
         {
-        	// The package views have not been published. Use the defaults. 
+        	// The package views have not been published. Use the defaults.
         	$this->app['view']->addNamespace('Sentinel', __DIR__.'/../views');
         }
 
         // Add the Sentinel Namespace to $app['config']
-        if (is_dir(app_path().'/config/packages/rydurham/sentinel'))
+        if (is_dir(app_path().'/config/packages/el2ro/sentinel'))
         {
         	// The package config has been published
-        	$this->app['config']->addNamespace('Sentinel', app_path().'/config/packages/rydurham/sentinel');
+        	$this->app['config']->addNamespace('Sentinel', app_path().'/config/packages/el2ro/sentinel');
         }
         else
         {
@@ -50,7 +50,7 @@ class SentinelServiceProvider extends ServiceProvider {
         	$this->app['config']->addNamespace('Sentinel', __DIR__.'/../config');
         }
 
-        
+
 
         // Add the Translator Namespace
         $this->app['translator']->addNamespace('Sentinel', __DIR__.'/../lang');

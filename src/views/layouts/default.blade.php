@@ -2,20 +2,20 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title> 
-			@section('title') 
-			@show 
+		<title>
+			@section('title')
+			@show
 		</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- Bootstrap 3.0: Latest compiled and minified CSS -->
 		<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"> -->
-		<link rel="stylesheet" href="{{ asset('packages/rydurham/sentinel/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('packages/el2ro/sentinel/css/bootstrap.min.css') }}">
 
 		<!-- Optional theme -->
 		<!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css"> -->
-		<link rel="stylesheet" href="{{ asset('packages/rydurham/sentinel/css/bootstrap-theme.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('packages/el2ro/sentinel/css/bootstrap-theme.min.css') }}">
 
 		<style>
 		@section('styles')
@@ -30,11 +30,11 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-	
+
 	</head>
 
 	<body>
-		
+
 
 		<!-- Navbar -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -83,9 +83,9 @@
 
 		<!-- Javascripts
 		================================================== -->
-		<script src="{{ asset('packages/rydurham/sentinel/js/jquery-2.0.2.min.js') }}"></script>
-		<script src="{{ asset('packages/rydurham/sentinel/js/bootstrap.min.js') }}"></script>
-		<script src="{{ asset('packages/rydurham/sentinel/js/restfulizer.js') }}"></script> 
+		<script src="{{ asset('packages/el2ro/sentinel/js/jquery-2.0.2.min.js') }}"></script>
+		<script src="{{ asset('packages/el2ro/sentinel/js/bootstrap.min.js') }}"></script>
+		<script src="{{ asset('packages/el2ro/sentinel/js/restfulizer.js') }}"></script>
 		<!-- Thanks to Zizaco for the Restfulizer script.  http://zizaco.net  -->
 	</body>
 </html>
