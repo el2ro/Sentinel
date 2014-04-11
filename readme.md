@@ -1,3 +1,7 @@
+## Sentinel: Fork - few important changes to me
+- adding Finnish Translation
+- password change does not send password over email
+
 ## Sentinel: Sentry Implementation for Laravel 4
 
 This pacakge provides an implementation of  [Sentry 2](https://github.com/cartalyst/sentry) for [Laravel 4](https://github.com/laravel/laravel/tree/develop). By default it uses [Bootstrap 3.0](http://getbootstrap.com), but you can make use of whatever UI you want. 
