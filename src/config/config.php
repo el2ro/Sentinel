@@ -35,6 +35,21 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
+    | Password Reset Type
+    |--------------------------------------------------------------------------
+    |
+    | Configuration value how password reset is handled after user follows the
+    | password reset confirmation link from email
+    |
+    | true (default) = a new password will be genenerated and emailed to the user
+    | false = a new password is asked from user, no password sending over email
+    |
+    */
+
+    'generateNewPassword' => false,
+
+	/*
+	|--------------------------------------------------------------------------
 	| E-Mail Subject Lines
 	|--------------------------------------------------------------------------
 	|

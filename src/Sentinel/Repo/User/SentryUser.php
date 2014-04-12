@@ -293,6 +293,43 @@ class SentryUser extends RepoAbstract implements UserInterface {
 	}
 
 	/**
+     * Process the password reset request
+     * @param  int $id
+     * @param  string $code
+     * @param  string $password
+     * @return Array
+     */
+    public function resetNewPassword($id, $code, $password)
+    {
+        $result = array();
+        try
+        {
+            // Find the user
+            $user = $this->sentry->getUserProvider()->findById($id);
+
+            // Attempt to reset the user password
+            if ($user->attemptResetPassword($code, $password))
+            {
+                // Email the reset code to the user
+                $result['success'] = true;
+                $result['message'] = trans('Sentinel::users.emailpassword');
+             }
+            else
+            {
+                // Password reset failed
+                $result['success'] = false;
+                $result['message'] = trans('Sentinel::users.problem');
+            }
+        }
+       catch (\Cartalyst\Sentry\Users\UserNotFoundException $e)
+        {
+            $result['success'] = false;
+            $result['message'] = trans('Sentinel::users.notfound');
+        }
+        return $result;
+    }
+
+	/**
 	 * Process a change password request. 
 	 * @return Array $data
 	 */
