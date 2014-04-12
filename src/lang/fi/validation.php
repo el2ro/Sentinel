@@ -77,18 +77,18 @@ return array(
 	'custom' => array(
         'oldPassword' => array(
             'required' => 'Sinun on annettava vanha salasanasi.',
-            'min' => 'Sinun vanhan salasanan on oltava vähintään 6 merkkiä pitkä.',
+            'min' => 'Vanhan salasanan on oltava vähintään 6 merkkiä pitkä.',
         ),
         'newPassword' => array(
             'required' => 'Sinun on annetta uusi salasana.',
-            'min' => 'Sinun uuden salasanan on oltava vähintään 6 merkkiä pitkä.',
+            'min' => 'Uuden salasanan on oltava vähintään 6 merkkiä pitkä.',
         ),
         'newPassword_confirmation' => array(
             'required' => 'Sinun on vahvistettava uusi salasanasi.',
         ),
         'minutes' => array(
             'numeric' => 'Minuuttien pitää olla numero',
-            'required' => 'Sinun pitää määrittää keskeytyksen pituus minuuteissa',
+            'required' => 'Määritä keskeytyksen pituus minuuteissa',
         ),
     ),
 
