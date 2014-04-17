@@ -3,7 +3,7 @@
 use Sentinel\Repo\Session\SessionInterface;
 use Sentinel\Service\Form\Login\LoginForm;
 use BaseController;
-use View, Input, Event, Redirect, Session, URL;
+use View, Input, Event, Redirect, Session, URL, Config;
 
 class SessionController extends BaseController {
 

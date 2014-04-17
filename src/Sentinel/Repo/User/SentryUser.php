@@ -3,7 +3,7 @@
 use Mail;
 use Cartalyst\Sentry\Sentry;
 use Sentinel\Repo\RepoAbstract;
-use Lang;
+use Lang, Config;
 
 class SentryUser extends RepoAbstract implements UserInterface {
 	
