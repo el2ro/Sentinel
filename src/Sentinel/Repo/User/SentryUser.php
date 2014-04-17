@@ -35,6 +35,14 @@ class SentryUser extends RepoAbstract implements UserInterface {
 			//Attempt to register the user. 
 			$user = $this->sentry->register(array('email' => e($data['email']), 'password' => e($data['password'])));
 
+			// Add the new user to the specified default group(s).
+			$defaultUserGroups = Config::get('Sentinel::config.default_user_groups');
+
+			foreach ($defaultUserGroups as $groupName) {
+				$group = $this->sentry->getGroupProvider()->findByName($groupName);
+				$user->addGroup($group);
+			}
+
 			//success!
 	    	$result['success'] = true;
 	    	$result['message'] = trans('Sentinel::users.created');

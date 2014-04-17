@@ -1,6 +1,7 @@
 ## Sentinel: Fork - few important changes to me
 - adding Finnish Translation
-- password change does not send password over email
+- allow password config that does not send password over email
+- busy, took a fast track, hope to fix those and push to rydurham branch
 
 ## Sentinel: Sentry Implementation for Laravel 4
 
@@ -63,7 +64,7 @@ __Optional:__ Publish Configuration
 ```
 php artisan config:publish rydurham/sentinel
 ```
-The config options will allow you to change the URL paths used by the package, as well as the subject lines for the emails sent to users. 
+The config file will allow you to control many aspects of Sentinels operation. [Take a look](src/config/config.php) to see what options are available.
 
 ### Usage: Filters and Routes
 Once installed, Sentinel adds a series of [routes](src/routes.php) for User interaction.  You will need to add links to these routes in your app's layouts.
@@ -87,14 +88,13 @@ Check the [Wiki](https://github.com/rydurham/Sentinel/wiki) for more information
 
 Any questions about this package should be posted [on the package website](http://www.ryandurham.com/projects/sentinel/).
 
-
 ### To Do
 * Set up testing with Travis
-* Increase test coverage - currently the tests are very limited.
-* Need to determine best practice for default home view.  
+* Increase test coverage - currently the tests are very limited. 
 * Add More languages? 
 
 ### History
+* __1.4.2__ Added new config options: Default User groups and Post Login redirect location.
 * __1.4.1__ Bug fixes.
 * __1.4__  Added Event triggers to allow users to set up custom functionality. 
 * __1.3.1__ Moved Custom Validation messages into Language file. 

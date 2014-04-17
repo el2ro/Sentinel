@@ -48,7 +48,8 @@ class SessionController extends BaseController {
             							));
 
             // Success!
-            return Redirect::intended(route('home'));
+            $redirect_route = Config::get('Sentinel::config.post_login');
+            return Redirect::intended(route($redirect_route));
 
         } else {
             Session::flash('error', $result['message']);
@@ -68,7 +69,8 @@ class SessionController extends BaseController {
 	{
 		$this->session->destroy();
 		Event::fire('sentinel.user.logout');
-		return Redirect::route('home');
+		$redirect_route = Config::get('Sentinel::config.post_logout');
+		return Redirect::route($redirect_route);
 	}
 
 }
