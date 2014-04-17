@@ -8,7 +8,7 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 
-	'created' 		=>  "Your account has been created. Check your email for the confirmation link.",
+	'created' 		=>  "Sinulle on luotu uusi tili. Muista vahvistaa tilisi sähköpostiin tulleella linkillä.",
 
 	'loginreq' 		=>	"Login field required.",
 
@@ -32,7 +32,7 @@ return array(
 
 	'emailinfo'		=>	"Tarkista sähköpostistasi ohjeet.",
 
-	'emailpassword'	=>	"Salasanasi on vaihdettu. Tarkista sähköpostistasi uusi salasana.",
+	'emailpassword'	=>	"Salasanasi on vaihdettu. Nyt voit kirjautua sisään uudella salasanallasi.",
 
 	'problem'		=>	"Ongelma havaittu. Ole ystävällinen ja ota yhtetty järjestelmän ylläpitäjään.",
 
