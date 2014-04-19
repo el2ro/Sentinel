@@ -50,6 +50,8 @@ return array(
 
 	'post_register' => 'home',
 
+	'post_activate' => 'home',
+
 	/*
 	|--------------------------------------------------------------------------
     | Password Reset Type
