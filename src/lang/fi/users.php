@@ -26,7 +26,7 @@ return array(
 
 	'notactivated'	=>	"Aktivointi ei voitu suorittaa loppuun.",
 
-	'alreadyactive'	=>	"Tämä tili on jo aktivoitu.",
+	'alreadyactive'	=>	"Tämä tili on jo aktivoitu, voit kirjautua sisään tunnuksillasi.",
 
 	'emailconfirm'	=>	"Tarkistä sähköpostistasi varmistus linkki.",
 

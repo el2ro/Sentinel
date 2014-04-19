@@ -258,22 +258,34 @@ class UserController extends BaseController {
             // @codeCoverageIgnoreEnd
         }
 
-		$result = $this->user->activate($id, $code);
+        try {
+    		$result = $this->user->activate($id, $code);
 
-        if( $result['success'] )
+            if( $result['success'] )
+            {
+                Event::fire('sentinel.user.activated', array(
+                    'userId' => $id,
+                ));
+
+                // Success!
+                $redirect_route = Config::get('Sentinel::config.post_activate','home');
+                Session::flash('success', $result['message']);
+                return Redirect::route($redirect_route);
+
+            } else {
+                Session::flash('error', $result['message']);
+                return Redirect::route('home');
+            }
+        }
+        catch (\Cartalyst\Sentry\Users\UserNotFoundException $e)
         {
-            Event::fire('sentinel.user.activated', array(
-                'userId' => $id,
-            ));
-
-            // Success!
-            $redirect_route = Config::get('Sentinel::config.post_activate','home');
-            Session::flash('success', $result['message']);
-            return Redirect::route($redirect_route);
-
-        } else {
-            Session::flash('error', $result['message']);
-            return Redirect::route('home');
+            $redirect_route = Config::get('Sentinel::config.post_login','home');
+            return Redirect::route($redirect_route)->with('error', trans('Sentinel::users.notfound'));
+        }
+        catch (\Cartalyst\Sentry\Users\UserAlreadyActivatedException $e)
+        {
+            $redirect_route = Config::get('Sentinel::config.post_login','home');
+            return Redirect::route($redirect_route)->with('error', trans('Sentinel::users.alreadyactive'));
         }
 	}
 
